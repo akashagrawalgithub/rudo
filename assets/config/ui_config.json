@@ -1,0 +1,404 @@
+{
+    "dashboard": {
+      "menu": [
+        {
+          "title": "Home",
+          "icon": "home",
+          "screen": "home_screen"
+        },
+        {
+          "title": "Search",
+          "icon": "search",
+          "screen": "search_screen"
+        },
+        
+        {
+          "title": "Settings",
+          "icon": "settings",
+          "screen": "settings_screen"
+        }
+      ]
+    },
+    "home_screen": {
+      "type": "scaffold",
+      "backgroundColor": "#FFFFFF",
+      "body": {
+        "type": "safe_area",
+        "child": {
+          "type": "single_child_scroll_view",
+          "padding": 16,
+          "child": {
+            "type": "column",
+            "crossAxisAlignment": "start",
+            "children": [
+              {
+                "type": "row",
+                "mainAxisAlignment": "spaceBetween",
+                "children": [
+                  {
+                    "type": "column",
+                    "crossAxisAlignment": "start",
+                    "children": [
+                      {
+                        "type": "text",
+                        "text": "Welcome back",
+                        "style": {
+                          "fontSize": 28,
+                          "fontWeight": "bold"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "Here's what's new today",
+                        "style": {
+                          "fontSize": 16,
+                          "color": "#757575"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "sized_box",
+                "height": 24
+              },
+              {
+                "type": "text",
+                "text": "Featured",
+                "style": {
+                  "fontSize": 24,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "type": "sized_box",
+                "height": 16
+              },
+              {
+                "type": "feature_card",
+                "title": "Getting Started Guide",
+                "subtitle": "Learn the basics of the application"
+              },
+              {
+                "type": "sized_box",
+                "height": 12
+              },
+              {
+                "type": "feature_card",
+                "title": "Complete Your Profile",
+                "subtitle": "Finish setting up your account details"
+              },
+              {
+                "type": "sized_box",
+                "height": 12
+              },
+              {
+                "type": "feature_card",
+                "title": "Explore Features",
+                "subtitle": "Check out what you can do with our app"
+              },
+              {
+                "type": "sized_box",
+                "height": 32
+              },
+              {
+                "type": "text",
+                "text": "Recent Activity",
+                "style": {
+                  "fontSize": 24,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "type": "sized_box",
+                "height": 16
+              },
+              {
+                "type": "activity_item",
+                "title": "Dashboard Overview",
+                "date": "Today"
+              },
+              {
+                "type": "sized_box",
+                "height": 12
+              },
+              {
+                "type": "activity_item",
+                "title": "Account Settings",
+                "date": "Yesterday"
+              },
+              {
+                "type": "sized_box",
+                "height": 12
+              },
+              {
+                "type": "activity_item",
+                "title": "Notification Preferences",
+                "date": "3 days ago"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "search_screen": {
+      "type": "scaffold",
+      "backgroundColor": "#FFFFFF",
+      "body": {
+        "type": "padding",
+        "padding": 16,
+        "child": {
+          "type": "column",
+          "crossAxisAlignment": "start",
+          "children": [
+            {
+              "type": "sized_box",
+              "height": 24
+            },
+            {
+              "type": "text_field",
+              "hint": "Search...",
+              "prefixIcon": "search",
+              "borderRadius": 12,
+              "contentPadding": [0, 16, 0, 16]
+            },
+            {
+              "type": "sized_box",
+              "height": 24
+            },
+            {
+              "type": "text",
+              "text": "Recent Searches",
+              "style": {
+                "fontSize": 18,
+                "fontWeight": "bold"
+              }
+            },
+            {
+              "type": "sized_box",
+              "height": 16
+            },
+            {
+              "type": "list_tile",
+              "leading": "history",
+              "title": "Investment options",
+              "trailing": "north_west",
+              "contentPadding": 0,
+              "action": "set_search_text",
+              "actionData": {
+                "text": "Investment options"
+              }
+            },
+            {
+              "type": "list_tile",
+              "leading": "history",
+              "title": "Retirement planning",
+              "trailing": "north_west",
+              "contentPadding": 0,
+              "action": "set_search_text",
+              "actionData": {
+                "text": "Retirement planning"
+              }
+            },
+            {
+              "type": "list_tile",
+              "leading": "history",
+              "title": "Tax benefits",
+              "trailing": "north_west",
+              "contentPadding": 0,
+              "action": "set_search_text",
+              "actionData": {
+                "text": "Tax benefits"
+              }
+            },
+            {
+              "type": "sized_box",
+              "height": 24
+            },
+            {
+              "type": "text",
+              "text": "Popular Searches",
+              "style": {
+                "fontSize": 18,
+                "fontWeight": "bold"
+              }
+            },
+            {
+              "type": "sized_box",
+              "height": 16
+            },
+            {
+              "type": "list_tile",
+              "leading": "trending_up",
+              "title": "Mutual funds",
+              "subtitle": "1.2k searches",
+              "trailing": "north_west",
+              "contentPadding": 0,
+              "action": "set_search_text",
+              "actionData": {
+                "text": "Mutual funds"
+              }
+            },
+            {
+              "type": "list_tile",
+              "leading": "trending_up",
+              "title": "Stock market",
+              "subtitle": "980 searches",
+              "trailing": "north_west",
+              "contentPadding": 0,
+              "action": "set_search_text",
+              "actionData": {
+                "text": "Stock market"
+              }
+            },
+            {
+              "type": "list_tile",
+              "leading": "trending_up",
+              "title": "Fixed deposits",
+              "subtitle": "750 searches",
+              "trailing": "north_west",
+              "contentPadding": 0,
+              "action": "set_search_text",
+              "actionData": {
+                "text": "Fixed deposits"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "settings_screen": {
+      "type": "scaffold",
+      "backgroundColor": "#FFFFFF",
+      "body": {
+        "type": "single_child_scroll_view",
+        "padding": 16,
+        "child": {
+          "type": "column",
+          "crossAxisAlignment": "start",
+          "children": [
+            {
+              "type": "sized_box",
+              "height": 24
+            },
+            {
+              "type": "container",
+              "margin": [0, 0, 0, 16],
+              "padding": 16,
+              "borderRadius": 12,
+              "color": "#FFFFFF",
+              "border": {
+                "color": "#EEEEEE",
+                "width": 1
+              },
+              "child": {
+                "type": "column",
+                "crossAxisAlignment": "start",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "Account",
+                    "style": {
+                      "fontSize": 20,
+                      "fontWeight": "bold"
+                    },
+                    "margin": [0,0, 0, 16]
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Personal Information",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Security",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Privacy",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Payment Methods",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  }
+                ]
+              }
+            },
+            {
+              "type": "container",
+              "margin": [0, 0, 0, 16],
+              "padding": 16,
+              "borderRadius": 12,
+              "color": "#FFFFFF",
+              "border": {
+                "color": "#EEEEEE",
+                "width": 1
+              },
+              "child": {
+                "type": "column",
+                "crossAxisAlignment": "start",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "Support",
+                    "style": {
+                      "fontSize": 20,
+                      "fontWeight": "bold"
+                    },
+                    "margin": [0, 0, 0, 16]
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Help Center",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Contact Us",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Terms of Service",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  },
+                  {
+                    "type": "list_tile",
+                    "title": "Privacy Policy",
+                    "trailing": "chevron_right",
+                    "contentPadding": 0
+                  }
+                ]
+              }
+            },
+            {
+              "type": "sized_box",
+              "height": 24
+            },
+            {
+              "type": "container",
+              "alignment": "center",
+              "child": {
+                "type": "button",
+                "text": "Log Out",
+                "style": "text",
+                "textColor": "#F44336",
+                "action": "logout"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }

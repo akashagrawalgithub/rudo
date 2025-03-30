@@ -1,0 +1,44 @@
+{
+    "auth": {
+      "methods": ["email", "google", "apple", "phone"],
+      "logoUrl": "assets/images/logo.png",
+      "welcomeText": "Welcome to Dynamic UI App",
+      "loginButtonText": "Sign In",
+      "registerButtonText": "Create Account",
+      "ui": {
+        "layout": "column",
+        "mainAxisAlignment": "center",
+        "crossAxisAlignment": "center",
+        "padding": 16,
+        "children": [
+          {
+            "type": "image",
+            "src": "assets/images/logo.png",
+            "width": 150,
+            "height": 150,
+            "margin": [0, 0, 0, 24]
+          },
+          {
+            "type": "text",
+            "text": "Welcome to Dynamic UI App",
+            "style": {
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "color": "#333333"
+            },
+            "margin": [0, 0, 0, 32]
+          },
+          {
+            "type": "auth_methods",
+            "methods": ["email", "google", "apple", "phone"],
+            "spacing": 16
+          }
+        ]
+      }
+    },
+    "enableGoogleAuth": true,
+    "enableAppleAuth": true,
+    "enablePhoneAuth": true,
+    "enableEmailAuth": true,
+    "phoneAuthTestNumber": "+918957792911"
+  }
