@@ -14,7 +14,7 @@ A modern Flutter application with a dynamic UI system, theme customization, and 
 
 ## Prerequisites
 
-- Flutter SDK (^3.7.2)
+- Flutter SDK (^3.29.2)
 - Dart SDK (^3.7.2)
 - Firebase account for authentication services
 
@@ -22,16 +22,19 @@ A modern Flutter application with a dynamic UI system, theme customization, and 
 ## Project Structure
 
 lib/
-├── bloc/           # BLoC pattern implementation
-│   ├── auth/       # Authentication BLoCs
-│   └── theme/      # Theme management BLoCs
-├── core/           # Core functionality
-│   ├── repositories/ # Data repositories
-│   └── services/   # Business logic services
-├── ui/             # UI components
-│   ├── screen/     # App screens
-│   └── widgets/    # Reusable widgets
-└── main.dart       # Entry point
+├── bloc/ # BLoC pattern implementation
+│ ├── auth/ # Authentication BLoCs
+│ └── theme/ # Theme management BLoCs
+├── core/ # Core functionality
+│ ├── models/ # Data models
+│ ├── repositories/ # Repository layer
+│ └── services/ # Service layer
+├── ui/ # User interface
+│ ├── components/ # Reusable UI components
+│ ├── screen/ # App screens
+│ └── widgets/ # Custom widgets
+├── utils/ # Utility functions
+└── main.dart # Application entry point
 
 
 ## Authentication
