@@ -20,21 +20,8 @@ A modern Flutter application with a dynamic UI system, theme customization, and 
 
 
 ## Project Structure
+<img width="435" alt="image" src="https://github.com/user-attachments/assets/07dfc256-be9a-4d3b-b4e1-bc508fbe4d7a" />
 
-lib/
-├── bloc/ # BLoC pattern implementation
-│ ├── auth/ # Authentication BLoCs
-│ └── theme/ # Theme management BLoCs
-├── core/ # Core functionality
-│ ├── models/ # Data models
-│ ├── repositories/ # Repository layer
-│ └── services/ # Service layer
-├── ui/ # User interface
-│ ├── components/ # Reusable UI components
-│ ├── screen/ # App screens
-│ └── widgets/ # Custom widgets
-├── utils/ # Utility functions
-└── main.dart # Application entry point
 
 
 ## Authentication
