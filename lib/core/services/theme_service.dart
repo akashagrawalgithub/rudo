@@ -7,7 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ThemeService {
   static const String _themeKey = 'theme_config';
 
-  // Default theme configuration
   static final ThemeConfig _defaultConfig = ThemeConfig(
     isDarkMode: false,
     primaryColor: '#1976D2',
@@ -18,7 +17,6 @@ class ThemeService {
     fontSize: 16.0,
   );
 
-  // Get theme configuration
   Future<ThemeConfig> getThemeConfig() async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -28,18 +26,15 @@ class ThemeService {
         return ThemeConfig.fromJson(jsonDecode(themeString));
       }
 
-      // If no saved config, try to load from assets
       try {
         final jsonString = await rootBundle.loadString(
           'assets/config/theme_config.json',
         );
         final config = ThemeConfig.fromJson(jsonDecode(jsonString));
 
-        // Save to preferences for future use
         await saveThemeConfig(config);
         return config;
       } catch (e) {
-        // If asset loading fails, use default config
         await saveThemeConfig(_defaultConfig);
         return _defaultConfig;
       }
@@ -48,13 +43,11 @@ class ThemeService {
     }
   }
 
-  // Save theme configuration
   Future<void> saveThemeConfig(ThemeConfig config) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_themeKey, jsonEncode(config.toJson()));
   }
 
-  // Toggle dark mode
   Future<ThemeConfig> toggleDarkMode() async {
     final config = await getThemeConfig();
     final updatedConfig = ThemeConfig(
@@ -70,8 +63,6 @@ class ThemeService {
     return updatedConfig;
   }
 
-  // Get ThemeData based on config
-  // Get ThemeData based on config
   ThemeData getThemeData(ThemeConfig config) {
     if (config.isDarkMode) {
       return ThemeData.dark().copyWith(
@@ -79,24 +70,24 @@ class ThemeService {
         colorScheme: ColorScheme.dark(
           primary: _hexToColor(config.primaryColor),
           secondary: _hexToColor(config.accentColor),
-          background: _hexToColor('#000000'), // True black background
-          surface: _hexToColor('#000000'), // True black surface
+          background: _hexToColor('#000000'),
+          surface: _hexToColor('#000000'),
           onBackground: _hexToColor('#FFFFFF'),
           onSurface: _hexToColor('#FFFFFF'),
         ),
-        scaffoldBackgroundColor: _hexToColor('#000000'), // True black scaffold
-        cardColor: _hexToColor('#121212'), // Dark gray for cards
+        scaffoldBackgroundColor: _hexToColor('#000000'),
+        cardColor: _hexToColor('#121212'),
         dividerColor: _hexToColor('#3E3E3E'),
         textTheme: ThemeData.dark().textTheme.apply(
           bodyColor: _hexToColor('#FFFFFF'),
           displayColor: _hexToColor('#FFFFFF'),
         ),
         appBarTheme: AppBarTheme(
-          backgroundColor: _hexToColor('#000000'), // True black app bar
+          backgroundColor: _hexToColor('#000000'),
           foregroundColor: _hexToColor('#FFFFFF'),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: _hexToColor('#000000'), // True black nav bar
+          backgroundColor: _hexToColor('#000000'),
           selectedItemColor: _hexToColor(config.primaryColor),
           unselectedItemColor: _hexToColor('#AAAAAA'),
         ),
@@ -113,12 +104,11 @@ class ThemeService {
             borderRadius: BorderRadius.circular(config.borderRadius),
             borderSide: BorderSide(color: _hexToColor(config.primaryColor)),
           ),
-          fillColor: _hexToColor('#121212'), // Dark gray for input fields
+          fillColor: _hexToColor('#121212'),
           filled: true,
         ),
       );
     } else {
-      // Light theme remains unchanged
       return ThemeData.light().copyWith(
         primaryColor: _hexToColor(config.primaryColor),
         colorScheme: ColorScheme.light(
@@ -141,7 +131,6 @@ class ThemeService {
     }
   }
 
-  // Helper method to convert hex to Color
   Color _hexToColor(String hexString) {
     final buffer = StringBuffer();
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');

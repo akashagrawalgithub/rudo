@@ -200,14 +200,12 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
       return;
     }
 
-    // Use test number from config if available
     final useTestNumber = _authConfig?.phoneAuthTestNumber != null;
     final phoneNumber =
         useTestNumber
             ? _authConfig!.phoneAuthTestNumber!
             : '+91${_phoneController.text.trim()}';
 
-    // If Firebase Phone Auth is enabled in config
     if (_authConfig?.enablePhoneAuth == true) {
       // For real Firebase auth
       // context.read<AuthBloc>().add(
@@ -243,7 +241,6 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
 
     // For testing, accept any 6-digit OTP or specifically 123456
     if (_otpController.text == "123456") {
-      // Navigate to dashboard
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => const DashboardScreen()),
         (route) => false,

@@ -42,7 +42,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
         final dashboardConfig = uiConfig['dashboard'];
         final List<dynamic> menuItems = dashboardConfig['menu'] ?? [];
 
-        // Build screens based on menu configuration
         final List<Widget> screens = _buildScreens(uiConfig, menuItems);
 
         return Scaffold(

@@ -527,7 +527,6 @@ class DynamicUIFactory {
     );
   }
 
-  // Helper methods for parsing values from JSON
 
   static TextStyle _parseTextStyle(
     Map<String, dynamic>? json,

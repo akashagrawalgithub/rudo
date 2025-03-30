@@ -8,7 +8,7 @@ class AuthRepository {
   AuthRepository({required AuthService authService})
     : _authService = authService;
 
-  User? get currentUser => _authService.currentUser;
+  Future<User?> get currentUser async => _authService.currentUser;
 
   Stream<User?> get authStateChanges => _authService.authStateChanges;
 
@@ -37,7 +37,6 @@ class AuthRepository {
       verificationCompleted: (
         firebase_auth.PhoneAuthCredential credential,
       ) async {
-        // Auto-verification completed (Android only)
         try {
           await _authService.verifyOTP(
             verificationId: credential.verificationId ?? '',
@@ -54,7 +53,6 @@ class AuthRepository {
         onCodeSent(verificationId, resendToken);
       },
       codeAutoRetrievalTimeout: (String verificationId) {
-        // Auto-retrieval timeout
       },
     );
   }

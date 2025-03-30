@@ -22,8 +22,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
   }
 
-  void _onAppStarted(AppStarted event, Emitter<AuthState> emit) {
-    final currentUser = _authRepository.currentUser;
+  Future<void> _onAppStarted(AppStarted event, Emitter<AuthState> emit) async {
+    final currentUser = await _authRepository.currentUser;
     if (currentUser != null) {
       emit(Authenticated(currentUser));
     } else {
@@ -31,8 +31,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
-  void _onLoggedIn(LoggedIn event, Emitter<AuthState> emit) {
-    final currentUser = _authRepository.currentUser;
+  Future<void> _onLoggedIn(LoggedIn event, Emitter<AuthState> emit) async {
+    final currentUser = await _authRepository.currentUser;
     if (currentUser != null) {
       emit(Authenticated(currentUser));
     }

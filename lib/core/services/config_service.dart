@@ -14,7 +14,6 @@ class ConfigService {
       return AuthConfig.fromJson(jsonData['auth']);
     } catch (e) {
       debugPrint('Error loading auth config: $e');
-      // Return default config if loading fails
       return AuthConfig(
         enabledMethods: [AuthMethod.email, AuthMethod.google],
         welcomeText: 'Welcome',

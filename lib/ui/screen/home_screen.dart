@@ -46,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         }
 
-        // Use DynamicUIFactory to build the UI from JSON
         return DynamicUIFactory.buildWidget(homeScreenConfig, context);
       },
     );

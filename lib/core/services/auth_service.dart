@@ -4,9 +4,11 @@ import 'package:rudo/core/models/auth_models.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AuthService {
-  final firebase_auth.FirebaseAuth _firebaseAuth =
-      firebase_auth.FirebaseAuth.instance;
+  final firebase_auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+
+  AuthService({firebase_auth.FirebaseAuth? firebaseAuth})
+    : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   // Get current user
   User? get currentUser {

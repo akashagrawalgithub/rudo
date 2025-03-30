@@ -53,7 +53,6 @@ class _SearchScreenState extends State<SearchScreen> {
           );
         }
 
-        // Inject the search controller into the context for dynamic UI to use
         return _SearchControllerProvider(
           controller: _searchController,
           child: DynamicUIFactory.buildWidget(searchScreenConfig, context),
@@ -63,7 +62,6 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 }
 
-// Provider widget to make the search controller available to the dynamic UI
 class _SearchControllerProvider extends InheritedWidget {
   final TextEditingController controller;
 

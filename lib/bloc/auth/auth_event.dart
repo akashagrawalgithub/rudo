@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:rudo/core/models/auth_models.dart';
 
 abstract class AuthEvent extends Equatable {
   const AuthEvent();
@@ -9,7 +10,14 @@ abstract class AuthEvent extends Equatable {
 
 class AppStarted extends AuthEvent {}
 
-class LoggedIn extends AuthEvent {}
+class LoggedIn extends AuthEvent {
+  final User user;
+
+  const LoggedIn({required this.user});
+
+  @override
+  List<Object?> get props => [user];
+}
 
 class LoggedOut extends AuthEvent {}
 
